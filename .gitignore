@@ -1,0 +1,45 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.venv/
+
+# Environment variable files
+.env
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# FastAPI logs
+*.log
+
+# Database files
+*.sqlite3
+
+# PyInstaller
+dist/
+build/
+*.spec
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Docker
+.docker/
+
+# Code coverage
+.coverage
+.tox/
+.nox/
+.coverage.*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
