@@ -14,7 +14,9 @@ class ProductBase(BaseModel):
     image_url: Optional[str] = None  # Optional image URL for the product
     is_available: bool = True  # Whether the product is currently available for sale
 
-
+#pydantic model for creating a new product
+class  ProductCreate(ProductBase):
+       pass #Inherits all fields from ProductBase (no extra fields for creation)
 
 # Pydantic model for returning a Product object with MongoDB's ObjectId
 class Product(ProductBase):
