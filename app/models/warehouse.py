@@ -17,7 +17,7 @@ class WarehouseCreate(WarehouseBase):
 
 # Pydantic model for returning a warehouse object with MongoDB's ObjectId
 class Warehouse(WarehouseBase):
-    id: str = Field(..., alias="_id")  # MongoDB stores the ObjectId as _id
+    id  # MongoDB stores the ObjectId as _id
 
     class Config:
         # Allow Pydantic to work with MongoDB's ObjectId
