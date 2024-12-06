@@ -11,10 +11,7 @@ async def create_farmer(db, farmer_data: FarmerCreate) -> Farmer:
     # Convert farmer data to dictionary and hash password (if necessary)
     farmer_dict = farmer_data.dict(exclude_unset=True)
     
-    # Assuming password hashing (use a proper password hash function in practice)
-    # farmer_dict['password'] = hash_password(farmer_data.password)
-    
-    # Insert farmer into the database
+    #place where to apply password hashing
     result = await db.farmers.insert_one(farmer_dict)
     
     # Retrieve the inserted farmer

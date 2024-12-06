@@ -18,9 +18,10 @@ class CustomerCreate(CustomerBase):
 
 # Pydantic model for returning a Customer object with MongoDB's ObjectId
 class Customer(CustomerBase):
-    id: str = Field(..., alias="_id")  # MongoDB stores the ObjectId as _id
+    id
 
     class Config:
+        allow_population_by_field_name = True
         # Allow Pydantic to work with MongoDB's ObjectId
         json_encoders = {
             ObjectId: str
