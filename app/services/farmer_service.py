@@ -3,7 +3,7 @@ from crud.farmer_crud import (
     get_all_farmers_from_db, 
     get_farmer_by_id_from_db, 
     update_farmer_in_db, 
-    delete_farmer_from_db
+    delete_farmer_from_db,get_farmer_by_email,get_farmer_by_name
 )
 from models.farmer import FarmerCreate, FarmerUpdate
 

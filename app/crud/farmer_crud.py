@@ -2,7 +2,9 @@ from fastapi import HTTPException
 from bson import ObjectId
 from models.farmer import FarmerCreate, Farmer, FarmerUpdate
 from core.utils import str_to_object_id
+from core.database import db
 from typing import List
+
 
 # Create a new farmer
 async def create_farmer(db, farmer_data: FarmerCreate) -> Farmer:
@@ -68,3 +70,15 @@ async def delete_farmer(db, farmer_id: str) -> str:
         raise HTTPException(status_code=404, detail="Farmer not found")
     
     return "Farmer deleted successfully"
+
+
+
+# Get farmer by username
+async def get_farmer_by_name(username: str):
+    farmer = await db["farmers"].find_one({"username": username})
+    return farmer
+
+# Get farmer by email
+async def get_farmer_by_email(email: str):
+    farmer = await db["farmers"].find_one({"email": email})
+    return farmer
